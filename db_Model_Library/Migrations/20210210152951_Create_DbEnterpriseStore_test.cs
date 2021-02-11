@@ -396,7 +396,12 @@ namespace db_Model_Library.Migrations
 		        INSERT INTO [Units]
 			                ([UnitName])
 		        VALUES
-                            (N'шт')");
+                            (N'шт')
+			GO
+		        INSERT INTO [Personnels]
+			                ([PersonnelName])
+		        VALUES
+                            (N'Магазин')");
 
         }
 
