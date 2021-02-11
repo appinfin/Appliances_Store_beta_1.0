@@ -3,17 +3,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace db_Model_Library
 {
-    public class Brand
+    public class Unit
     {
-        public Brand()
+        public Unit()
         {
             Products = new HashSet<Product>();
         }
         [Key]
-        public int BrandId { get; set; }
+        public int IdUnit { get; set; }
+
         [Required]
-        [StringLength(32)]
-        public string BrandName { get; set; }
+        [StringLength(16)]
+        public string UnitName { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
     }

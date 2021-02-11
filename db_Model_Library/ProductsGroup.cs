@@ -1,19 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace db_Model_Library
 {
-    public class Brand
+    public class ProductGroup
     {
-        public Brand()
+        public ProductGroup()
         {
             Products = new HashSet<Product>();
         }
         [Key]
-        public int BrandId { get; set; }
+        public int ProductGroupId { get; set; }
         [Required]
         [StringLength(32)]
-        public string BrandName { get; set; }
+        public string ProductGroupName { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
     }
