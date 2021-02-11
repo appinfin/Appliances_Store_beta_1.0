@@ -1,5 +1,5 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 namespace db_Model_Library.Migrations
 {
@@ -33,6 +33,7 @@ namespace db_Model_Library.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Counterpartys", x => x.CounterpartyId);
+                    //table.UniqueConstraint("UK_InnOgrnKpp", x => x.InnOgrnKpp);
                 });
 
             migrationBuilder.CreateTable(
@@ -106,8 +107,8 @@ namespace db_Model_Library.Migrations
                         principalColumn: "PersonnelId",
                         onUpdate: ReferentialAction.Cascade,
                         onDelete: ReferentialAction.Cascade);
-		    
-		            table.UniqueConstraint("UK_Passport_PersonnelsPersonnelId", x => new { x.PersonnelsPersonnelId, x.Passport});
+
+                    table.UniqueConstraint("UK_Passport_PersonnelsPersonnelId", x => new { x.PersonnelsPersonnelId, x.Passport });
                 });
 
             migrationBuilder.CreateTable(
@@ -366,6 +367,36 @@ namespace db_Model_Library.Migrations
                 @"ALTER TABLE dbo.Supplies
                   ADD CONSTRAINT DF_Date_Supplies
                   DEFAULT (getdate()) FOR [Date]");
+
+            migrationBuilder.Sql(
+                @"INSERT INTO [Counterpartys]
+           		                ([CounterpartyName]
+           		                ,[InnOgrnKpp])
+     		    VALUES
+           		            (N'Покупатель'
+           		            ,100000000000)
+		        GO
+		        INSERT INTO [Counterpartys]
+           		            ([CounterpartyName]
+           		            ,[InnOgrnKpp])
+     		    VALUES
+           		            (N'Поставщик'
+           		            ,200000000000)
+		        GO
+                INSERT INTO [Brands]
+			                ([BrandName])
+		        VALUES
+                            (N'неизв.')
+		        GO
+		        INSERT INTO [Storages]
+			               ([StorageName])
+		        VALUES
+  		                   (N'Склад')
+		        GO
+		        INSERT INTO [Units]
+			                ([UnitName])
+		        VALUES
+                            (N'шт')");
 
         }
 
