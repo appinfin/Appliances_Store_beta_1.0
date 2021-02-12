@@ -41,7 +41,7 @@ namespace db_Model_Library
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 //optionsBuilder.UseMySql("server=localhost;database=db_test;user=root", Microsoft.EntityFrameworkCore.ServerVersion.FromString("5.7.16-mysql"));
                 //optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=db_test_Store;Trusted_Connection=True;Integrated Security = True");
-                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=db_Enterprise_Store_test5;Trusted_Connection=True;Integrated Security=True;");
+                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=db_Enterprise_Store_test8;Trusted_Connection=True;Integrated Security=True;");
                 #region Подключение в текущем каталоге приложения
                 //optionsBuilder.UseSqlServer(@"Data Source = (localdb)\mssqllocaldb;" +
                 //    @"AttachDbFilename =" +
